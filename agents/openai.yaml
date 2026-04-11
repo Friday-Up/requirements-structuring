@@ -1,0 +1,4 @@
+interface:
+  display_name: "Requirement Structuring"
+  short_description: "Summarize requirements into a decision-ready brief"
+  default_prompt: "Use $requirements-structuring to turn the current conversation into a structured requirement brief."
