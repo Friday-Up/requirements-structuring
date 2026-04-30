@@ -1,91 +1,102 @@
-# requirements-structuring
+<div align="center">
 
-A Codex skill for turning scattered requirements into a structured, decision-ready brief.
+# 🧩 Requirements Structuring
 
-这个技能适合把对话、会议纪要、零散需求、临时方案讨论，快速整理成统一结构，方便继续评估、确认和推进。
+**把零散需求一键整理成可决策的结构化简报**
 
-## What It Does
+*A Codex skill for turning scattered requirements into a structured, decision-ready brief.*
 
-`requirements-structuring` 会把输入内容收敛成固定六段结构：
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Codex Skill](https://img.shields.io/badge/Codex-Skill-000000?logo=openai&logoColor=white)](https://github.com/openai/codex)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Friday-Up/requirements-structuring/pulls)
+[![GitHub Stars](https://img.shields.io/github/stars/Friday-Up/requirements-structuring?style=social)](https://github.com/Friday-Up/requirements-structuring)
 
-- `需求描述`
-- `现状`
-- `需求评估`
-- `待确认清单`
-- `方案说明`
-- `【价值点】卡点&关键点`
+[简介](#-简介) • [适用场景](#-适用场景) • [输出结构](#-输出结构) • [快速开始](#-快速开始) • [使用方法](#-使用方法) • [示例](#-示例) • [设计原则](#-设计原则)
 
-它的核心目标不是简单“复述需求”，而是：
+</div>
 
-- 从零散信息里提炼真正的问题定义
-- 区分已知事实、分析判断和待确认项
-- 暴露推进中的关键卡点和决策点
-- 输出一份可以继续沟通和拍板的结构化简报
+---
 
-## Best For
+## 📖 简介
 
-适合这些场景：
+**Requirements Structuring** 是一个 [Codex](https://github.com/openai/codex) Skill，专为产品、研发和项目管理场景设计。它能把对话、会议纪要、零散需求或临时方案讨论，**快速整理成统一的六段式结构**，方便继续评估、确认和推进。
 
-- 需求描述很散，先要统一理解
-- 需求讨论已经开始，但边界、目标或方案还不清晰
-- 希望把口头沟通快速整理成可执行的结构化文档
-- 在设计或开发前，先做需求梳理和方案预评估
-- 想在跨角色沟通时把问题、价值和卡点说清楚
+它的核心目标不是简单"复述需求"，而是：
 
-## Output Structure
+- 🔍 **从零散信息里提炼真正的问题定义**
+- 🧭 **区分已知事实、分析判断和待确认项**
+- ⚠️ **暴露推进中的关键卡点和决策点**
+- 📋 **输出一份可以继续沟通和拍板的结构化简报**
 
-### 1. 需求描述
+> 把"开了一小时会还不知道下一步干啥"变成"五分钟出一份能拍板的简报"。
 
-归纳用户真正想解决的问题、目标结果和期望产出。
+---
 
-### 2. 现状
+## 🎯 适用场景
 
-总结当前背景、已有做法、限制条件和依赖关系，只写现状，不混入方案。
+| 场景 | 痛点 | Skill 能做什么 |
+| --- | --- | --- |
+| 📝 **需求很散** | 多方反馈混在一起，没有统一理解 | 收敛成统一结构，统一认知起点 |
+| 🗣️ **讨论模糊** | 边界、目标、方案都不清晰 | 区分事实/判断/待确认，暴露盲点 |
+| 🎙️ **口头沟通** | 会议结束后只剩流水账 | 整理成可执行的结构化文档 |
+| 🛠️ **设计/开发前** | 直接动手风险大 | 先做需求梳理 + 方案预评估 |
+| 🤝 **跨角色协作** | 各方关注点不同，难对齐 | 把问题、价值和卡点说清楚 |
 
-### 3. 需求评估
+---
 
-评估需求是否清晰、范围是否完整、是否存在歧义、风险或隐含前提。
+## 📑 输出结构
 
-### 4. 待确认清单
+Skill 会严格按以下**六段式**结构输出，便于跨场景复用：
 
-列出必须进一步确认的问题，优先覆盖会影响方案选择、边界定义和排期判断的部分。
+| 栏目 | 作用 |
+| --- | --- |
+| **1. 需求描述** | 归纳用户真正想解决的问题、目标结果和期望产出 |
+| **2. 现状** | 总结当前背景、已有做法、限制条件和依赖关系（不混入方案） |
+| **3. 需求评估** | 评估需求是否清晰、范围是否完整、是否存在歧义/风险 |
+| **4. 待确认清单** | 列出必须进一步确认的问题，优先覆盖影响方案/边界/排期的部分 |
+| **5. 方案说明** | 给出推荐方案或可选方案，说明思路、前提、影响范围和取舍 |
+| **6. 【价值点】卡点&关键点** | 价值点（收益）+ 卡点（阻塞）+ 关键点（优先拍板项） |
 
-### 5. 方案说明
+---
 
-给出推荐方案或可选方案，说明思路、前提、影响范围和取舍。
+## 🚀 快速开始
 
-### 6. 【价值点】卡点&关键点
+### 前置依赖
 
-- `价值点`：这项需求或方案能带来的收益
-- `卡点`：当前推进中的阻塞和风险
-- `关键点`：最值得优先拍板、验证或关注的部分
+- [Codex CLI](https://github.com/openai/codex) 已安装并完成登录
 
-## Why This Skill Is Useful
+### 安装
 
-很多需求讨论的问题不在于“没有内容”，而在于：
+把仓库放到 Codex 的 `skills` 目录下即可：
 
-- 内容分散，结论不成形
-- 事实、推断、方案混在一起
-- 风险没有被提前暴露
-- 大家讨论了很多，但没有形成下一步决策依据
+```bash
+git clone https://github.com/Friday-Up/requirements-structuring.git \
+  "${CODEX_HOME:-$HOME/.codex}/skills/requirements-structuring"
+```
 
-这个技能的价值就在于把这些内容压缩成统一结构，让输出更像“可推进的需求简报”，而不是“沟通记录”。
+如果目录已存在，可直接更新：
 
-## How To Use
+```bash
+git -C "${CODEX_HOME:-$HOME/.codex}/skills/requirements-structuring" pull
+```
 
-### Explicit invocation
+---
+
+## 💬 使用方法
+
+### 显式调用
 
 ```text
 Use $requirements-structuring to turn the current conversation into a structured requirement brief.
 ```
 
-### Natural language trigger
+### 自然语言触发
 
 ```text
 请根据这段对话，整理成需求描述、现状、需求评估、待确认清单、方案说明、【价值点】卡点&关键点。
 ```
 
-### Common prompt styles
+### 常用提示词模板
 
 ```text
 请把下面的需求讨论整理成结构化简报，并明确哪些内容是待确认项。
@@ -99,19 +110,26 @@ Use $requirements-structuring to turn the current conversation into a structured
 不要只复述内容，帮我评估这个需求目前是否足够清晰，缺什么信息。
 ```
 
-## Example
+---
 
-### Input
+## 🧪 示例
+
+<details open>
+<summary><b>📥 输入</b></summary>
 
 ```text
-我们想把异常工单页面改成更适合排查问题的形式，现在字段很多但重点不清楚。希望先帮我梳理需求、现状和可选方案，再列出需要业务确认的问题。
+我们想把异常工单页面改成更适合排查问题的形式，现在字段很多但重点不清楚。
+希望先帮我梳理需求、现状和可选方案，再列出需要业务确认的问题。
 ```
 
-### Output
+</details>
+
+<details open>
+<summary><b>📤 输出</b></summary>
 
 ```markdown
 ### 需求描述
-- 需要将异常工单页面从“字段展示导向”调整为“问题排查导向”，提升定位问题的效率。
+- 需要将异常工单页面从"字段展示导向"调整为"问题排查导向"，提升定位问题的效率。
 
 ### 现状
 - 当前页面字段较多，但信息层级不清，重点不突出。
@@ -137,47 +155,106 @@ Use $requirements-structuring to turn the current conversation into a structured
 - 关键点：先明确排查路径，再决定页面结构和字段编排。
 ```
 
-## Installation
+</details>
 
-如果你希望在本地 Codex 中直接使用这个技能，可以把仓库放到 `$CODEX_HOME/skills` 下，或复制到默认技能目录：
+---
 
-```bash
-git clone https://github.com/Friday-Up/requirements-structuring.git \
-  "${CODEX_HOME:-$HOME/.codex}/skills/requirements-structuring"
+## 🗂️ 仓库结构
+
+```text
+requirements-structuring/
+├── SKILL.md              # 技能定义与执行规则（核心）
+├── README.md             # 项目说明（你正在看的文件）
+├── LICENSE               # MIT 协议
+├── agents/
+│   └── openai.yaml       # Codex 平台 UI 展示元数据
+└── .gitignore
 ```
 
-如果目录已经存在，也可以直接更新：
+---
 
-```bash
-git -C "${CODEX_HOME:-$HOME/.codex}/skills/requirements-structuring" pull
-```
-
-## Repository Layout
-
-- [SKILL.md](./SKILL.md): 技能定义与执行规则
-- [agents/openai.yaml](./agents/openai.yaml): UI 展示元数据
-
-## Design Principles
+## 🧠 设计原则
 
 这个技能遵循几个明确原则：
 
-- 不把推断写成事实
-- 信息不足时显式列出缺口
-- 输出重点是帮助决策和推进，而不是堆叠描述
-- 优先暴露影响方案选择的关键问题
-- 保持结构统一，方便复用到不同需求场景
+- ❌ **不把推断写成事实** —— 三类信息严格区分
+- 🔍 **信息不足时显式列出缺口** —— 不要硬补
+- 🎯 **输出重点是帮助决策和推进** —— 不是堆叠描述
+- ⚡ **优先暴露影响方案选择的关键问题**
+- 📐 **保持结构统一** —— 方便复用到不同需求场景
 
-## Limitations
+---
 
-这个技能擅长“梳理和评估”，不直接替代：
+## ⚠️ 能力边界
 
-- 完整 PRD 编写
-- 详细交互设计
-- 技术方案实现文档
-- 项目排期拆解
+这个技能擅长「梳理和评估」，**不直接替代**以下产物：
 
-当输入信息严重不足时，输出会更偏向“结构化澄清清单”，这是预期行为，不是能力缺失。
+| ❌ 不替代 | 原因 |
+| --- | --- |
+| 完整 PRD 编写 | 缺少用户故事、详细流程、验收标准等环节 |
+| 详细交互设计 | 不输出页面流、状态机、组件级规范 |
+| 技术方案实现文档 | 不输出代码结构、接口契约、数据模型 |
+| 项目排期拆解 | 不做 WBS、人力估算、依赖图 |
 
-## License
+> 当输入信息严重不足时，输出会更偏向"结构化澄清清单"，**这是预期行为，不是能力缺失**。
 
-当前仓库未单独声明许可证。如需开源分发，建议补充明确的 license 文件。
+---
+
+## ❓ 常见问题
+
+<details>
+<summary><b>Q1：和直接让 LLM "总结需求" 有什么区别？</b></summary>
+
+直接让 LLM 总结，输出风格因模型/提示词而异，常常变成"会议纪要复述"。这个 Skill 用固定六段结构 + 严格的事实/判断/待确认区分，输出的是**可推进的简报**，而不是流水账。
+</details>
+
+<details>
+<summary><b>Q2：如果输入只有一两句话能用吗？</b></summary>
+
+可以。信息不足时，Skill 会把 80% 的输出放在「待确认清单」里，相当于自动生成一份**结构化澄清问题集**，引导你补全上下文。
+</details>
+
+<details>
+<summary><b>Q3：能定制输出栏目吗？</b></summary>
+
+可以。直接编辑 [`SKILL.md`](./SKILL.md) 的「Standard Structure」与「Response Template」段，调整后立即生效。
+</details>
+
+<details>
+<summary><b>Q4：支持其他 AI Agent 平台（Claude / Cursor / 通义）吗？</b></summary>
+
+[`SKILL.md`](./SKILL.md) 本身是平台无关的提示词规范。其他平台只需把 SKILL.md 的内容作为系统提示词或 Skill 定义引入即可。
+</details>
+
+---
+
+## 🤝 贡献
+
+欢迎任何形式的贡献！
+
+1. Fork 本仓库
+2. 创建特性分支：`git checkout -b feature/amazing-feature`
+3. 提交变更：`git commit -m 'feat: add amazing feature'`
+4. 推送分支：`git push origin feature/amazing-feature`
+5. 提交 Pull Request
+
+提交信息请遵循 [Conventional Commits](https://www.conventionalcommits.org/) 规范。
+
+---
+
+## 📜 License
+
+本项目基于 [MIT License](./LICENSE) 开源协议发布。
+
+---
+
+## 🌟 致谢
+
+- [Codex CLI](https://github.com/openai/codex) —— OpenAI 官方编码助手
+- 所有为本项目提供反馈和建议的小伙伴 ❤️
+
+<div align="center">
+
+**如果这个 Skill 帮到了你，欢迎点一个 ⭐ Star 支持一下！**
+
+</div>
